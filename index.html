@@ -1,70 +1,270 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zeth Salonga | Basketball Homepage</title>
+
+    <!-- 1) EXTERNAL CSS: styles that are shared by the whole page -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 2) INTERNAL CSS: styles written inside this HTML file (hero banner) -->
+    <style>
+        /* ID selector */
+        #hero {
+            text-align: center;
+            padding: 50px 20px 40px 20px;
+            color: white;
+            /* BACKGROUND: dark court with an orange glow */
+            background-color: #1b1b1b;
+            background-image: radial-gradient(circle at 50% 0%, #e8641b 0%, #1b1b1b 70%);
+            border-bottom: 8px solid #e8641b;
+        }
+
+        /* ID selector */
+        #hero-title {
+            margin: 10px 0 5px 0;
+            font-size: 44px;
+            letter-spacing: 1px;
+        }
+
+        /* Element selector inside an ID */
+        #hero p {
+            margin: 0 0 6px 0;
+            font-size: 18px;
+        }
+
+        /* Class selector: a CSS-drawn basketball */
+        .ball {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #e8641b;
+            border: 4px solid #1b1b1b;
+            border-radius: 50%;
+        }
+
+        .ball::before {            /* vertical line */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background-color: #1b1b1b;
+            transform: translateX(-50%);
+        }
+
+        .ball::after {             /* horizontal line */
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #1b1b1b;
+            transform: translateY(-50%);
+        }
+
+        /* Class selector: little stat boxes in the hero */
+        .stat {
+            display: inline-block;
+            margin: 12px 6px 0 6px;
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body style="text-align: center; font-family: Arial; background: linear-gradient(to bottom, red, white, gray); min-height: 100vh; margin: 0; padding: 30px;">
 
-    <div style="background-color: white; max-width: 600px; margin: auto; padding: 30px; border-radius: 15px; border: 3px solid gray; box-shadow: 3px 3px 10px gray;">
+<body id="top">
 
-        <h1 style="color: red; font-size: 40px; margin-bottom: 5px;">Student Information</h1>
-        <p style="color: gray; margin-top: 0;">Grade 9 - Galatians</p>
-        <hr style="border: 1px solid red;">
+    <!-- ================= HEADER (HTML sectioning) ================= -->
+    <header id="hero">
+        <div class="ball"></div>
+        <h1 id="hero-title">Zeth Arkin A. Salonga</h1>
+        <p>Student | Hooper | Future Businessman</p>
+        <div>
+            <span class="stat">Grade 9 - Galatians</span>
+            <span class="stat">Imus, Cavite</span>
+            <span class="stat">Jersey #: [add number]</span>
+        </div>
+    </header>
 
-        <h2 style="color: red;">Personal Information</h2>
-        <table style="margin: auto; text-align: left; border-collapse: collapse;">
-            <tr>
-                <td style="padding: 6px; font-weight: bold;">Student ID:</td>
-                <td style="padding: 6px;">SAL3340-25</td>
-            </tr>
-            <tr style="background-color: whitesmoke;">
-                <td style="padding: 6px; font-weight: bold;">Name:</td>
-                <td style="padding: 6px;">Zeth Arkin A. Salonga</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px; font-weight: bold;">Grade and Section:</td>
-                <td style="padding: 6px;">9 - Galatians</td>
-            </tr>
-            <tr style="background-color: whitesmoke;">
-                <td style="padding: 6px; font-weight: bold;">Birthday:</td>
-                <td style="padding: 6px;">December 5, 2011</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px; font-weight: bold;">Address:</td>
-                <td style="padding: 6px;">Wisconsin Street Barcelona 3 Imus Cavite</td>
-            </tr>
-            <tr style="background-color: whitesmoke;">
-                <td style="padding: 6px; font-weight: bold;">Phone No:</td>
-                <td style="padding: 6px;">09665895237</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px; font-weight: bold;">Email:</td>
-                <td style="padding: 6px;">zethantonio839@gmail.com</td>
-            </tr>
-        </table>
+    <div class="container">
 
-        <hr style="border: 1px solid red; margin-top: 25px;">
+        <!-- ================= TABLE OF CONTENTS (bookmark links) ================= -->
+        <nav class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a class="btn" href="#info">Student Info</a></li>
+                <li><a class="btn" href="#about">About Me</a></li>
+                <li><a class="btn" href="#hobbies">My Hobbies</a></li>
+                <li><a class="btn" href="#food">Favorite Food</a></li>
+                <li><a class="btn" href="#players">Favorite Players</a></li>
+                <li><a class="btn" href="#team">Favorite Team</a></li>
+                <li><a class="btn" href="#goals">My Goals</a></li>
+                <li><a class="btn" href="#gallery">Photo Gallery</a></li>
+            </ul>
+        </nav>
 
-        <h2 style="color: red;">About Me</h2>
-        <img src="https://i.imgur.com/6MyqaF3.jpg" alt="Zeth Arkin A. Salonga" width="200" style="border-radius: 10px; border: 3px solid gray; margin-bottom: 10px;">
-        <p>Hi! I'm Zeth Arkin A. Salonga, a Grade 9 student from Galatians. My birthday is December 5, and I live in Imus, Cavite.</p>
+        <main>
 
-        <hr style="border: 1px solid red;">
+            <!-- ================= STUDENT INFO ================= -->
+            <section class="card" id="info">
+                <h2>Student Information</h2>
+                <table class="info-table">
+                    <tr><th>Student ID:</th><td>SAL3340-25</td></tr>
+                    <tr><th>Name:</th><td>Zeth Arkin A. Salonga</td></tr>
+                    <tr><th>Grade and Section:</th><td>9 - Galatians</td></tr>
+                    <tr><th>Birthday:</th><td>December 5, 2011</td></tr>
+                    <tr><th>Address:</th><td>Wisconsin Street, Barcelona 3, Imus, Cavite</td></tr>
+                    <tr><th>Phone No:</th><td>09665895237</td></tr>
+                    <tr><th>Email:</th><td>zethantonio839@gmail.com</td></tr>
+                    <tr><th>Position:</th><td>[Add your position, e.g. Point Guard]</td></tr>
+                </table>
+            </section>
 
-        <h2 style="color: red;">My Hobbies</h2>
-        <p>I enjoy listening to music, watching movies, and hanging out with my friends and family.</p>
+            <!-- ================= ABOUT ME ================= -->
+            <section class="card" id="about">
+                <h2>About Me</h2>
+                <img class="profile-pic" src="https://i.imgur.com/6MyqaF3.jpg" alt="Zeth Arkin A. Salonga">
+                <p>Hi! I'm Zeth Arkin A. Salonga, a Grade 9 student from Galatians. My birthday is December 5, and I live in Imus, Cavite.</p>
+                <p>Basketball is a big part of my life. I love playing the game, watching it, and dreaming about where it can take me one day.</p>
+                <p>[Add one more sentence about yourself, like how long you've been playing basketball.]</p>
 
-        <hr style="border: 1px solid red;">
+                <!-- 3) INLINE CSS: style written directly on the element -->
+                <aside class="quote" style="font-style: italic; font-size: 18px;">
+                    "[Add your favorite basketball quote here]"
+                </aside>
+            </section>
 
-        <p style="color: gray; font-style: italic;">Thank you for viewing my student information page!</p>
+            <!-- ================= HOBBIES ================= -->
+            <section class="card" id="hobbies">
+                <h2>My Hobbies</h2>
+                <p>When I'm not in class, you can find me doing these:</p>
+                <div class="grid">
+                    <article class="mini-card">
+                        <h3>Playing Basketball</h3>
+                        <p>My number one hobby. I love shooting, dribbling, and playing games with my friends.</p>
+                        <p>[Add your favorite move or place to play]</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>Mobile Legends (ML)</h3>
+                        <p>I enjoy playing ML with my friends and teaming up to win.</p>
+                        <p>[Add your favorite hero or rank]</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>NBA 2K</h3>
+                        <p>NBA 2K lets me play basketball on the console and try out my favorite teams and players.</p>
+                        <p>[Add your favorite game mode]</p>
+                    </article>
+                </div>
+            </section>
 
-        <a href="page2.html">Page 2</a>
-        <a href="page3.html">Page 3</a>
-        <a href="page4.html">Page 4</a>
-        <a href="page5.html">Page 5</a>
-        <a href="page6.html">Page 6</a>
-        
+            <!-- ================= FAVORITE FOOD ================= -->
+            <section class="card" id="food">
+                <h2>Favorite Food</h2>
+                <div class="grid">
+                    <article>
+                        <div class="placeholder">[Add Mac n Cheese image here]</div>
+                        <h3>Mac n Cheese</h3>
+                        <p>Creamy, cheesy, and always a good choice.</p>
+                    </article>
+                    <article>
+                        <div class="placeholder">[Add Ramen image here]</div>
+                        <h3>Ramen</h3>
+                        <p>A hot bowl of ramen is my go-to meal.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ================= FAVORITE PLAYERS ================= -->
+            <section class="card" id="players">
+                <h2>Favorite Players</h2>
+                <p>These players inspire the way I play.</p>
+                <div class="grid">
+                    <article class="mini-card">
+                        <div class="placeholder">[Add Player 1 image here]</div>
+                        <h3>[Player 1 Name]</h3>
+                        <p>Team: [Add team]</p>
+                        <p>Why I like him: [Add your reason]</p>
+                    </article>
+                    <article class="mini-card">
+                        <div class="placeholder">[Add Player 2 image here]</div>
+                        <h3>[Player 2 Name]</h3>
+                        <p>Team: [Add team]</p>
+                        <p>Why I like him: [Add your reason]</p>
+                    </article>
+                    <article class="mini-card">
+                        <div class="placeholder">[Add Player 3 image here]</div>
+                        <h3>[Player 3 Name]</h3>
+                        <p>Team: [Add team]</p>
+                        <p>Why I like him: [Add your reason]</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ================= FAVORITE TEAM ================= -->
+            <section class="card" id="team">
+                <h2>Favorite Team</h2>
+                <div class="grid">
+                    <div class="placeholder tall">[Add your favorite team logo or photo here]</div>
+                    <div>
+                        <h3>[Team Name]</h3>
+                        <p>Why they're my team: [Add your reason]</p>
+                        <p>Favorite game or moment: [Add it here]</p>
+                        <p>Best player on the team: [Add name]</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= GOALS ================= -->
+            <section class="card" id="goals">
+                <h2>My Goals</h2>
+                <div class="grid">
+                    <article class="mini-card">
+                        <h3>Be a Good Basketball Player</h3>
+                        <p>I want to keep practicing and improve my skills so I can become a great basketball player in the future.</p>
+                        <p>My plan: [Add what you do to improve, like practice shooting]</p>
+                    </article>
+                    <article class="mini-card">
+                        <h3>Become a Businessman</h3>
+                        <p>I also want to be a businessman one day and build something of my own.</p>
+                        <p>My plan: [Add what kind of business you want to start]</p>
+                    </article>
+                </div>
+                <aside class="quote">
+                    Hard work on the court and in school will take me there.
+                </aside>
+            </section>
+
+            <!-- ================= PHOTO GALLERY ================= -->
+            <section class="card" id="gallery">
+                <h2>Photo Gallery</h2>
+                <p>Basketball moments I want to remember:</p>
+                <div class="grid">
+                    <div class="placeholder">[Add basketball photo 1]</div>
+                    <div class="placeholder">[Add basketball photo 2]</div>
+                    <div class="placeholder">[Add basketball photo 3]</div>
+                </div>
+                <!-- Inline CSS again: centering the button -->
+                <p style="text-align: center; margin-top: 20px;">
+                    <a class="btn btn-dark" href="#top">Back to Top</a>
+                </p>
+            </section>
+
+        </main>
     </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="site-footer">
+        <p>Thank you for viewing my homepage!</p>
+        <p>Zeth Arkin A. Salonga | 9 - Galatians</p>
+    </footer>
+
 </body>
 </html>
-
